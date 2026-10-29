@@ -1,0 +1,9 @@
+[package]
+name = "sigmaos-chromium"
+version = "0.1.0"
+edition = "2021"
+authors = ["SigmaOS Project"]
+description = "SigmaOS Chromium launcher, security hardening profile manager, and webapp isolation"
+license = "GPL-3.0"
+
+[dependencies]
