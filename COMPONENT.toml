@@ -1,0 +1,6 @@
+[component]
+name = "SigmaOS-chromium"
+tier = 4
+description = "Chromium sovereign browser profile, hardened flags, and web application container runtime"
+contracts = ['chromium-hardened-profile', 'webapp-browser-host', 'secure-flags-shim']
+upstream_inspirations = ['https://github.com/omacom/omarchy-chromium']

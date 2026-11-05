@@ -1,12 +1,30 @@
-//! SigmaOS Chromium Launcher & Hardening Profile Subsystem.
-//!
-//! Principles: Secure Defaults, Process Isolation, Defensive Programming,
-//! Command-Query Separation, Single Responsibility, Arrange-Act-Assert.
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct ChromiumFlags {
+    pub enable_sandboxing: bool,
+    pub disable_telemetry: bool,
+    pub wayland_ozone_enabled: bool,
+}
 
-pub mod flags;
-pub mod profile;
-pub mod launcher;
+impl ChromiumFlags {
+    pub fn sovereign_hardened() -> Self {
+        Self {
+            enable_sandboxing: true,
+            disable_telemetry: true,
+            wayland_ozone_enabled: true,
+        }
+    }
+}
 
-pub use flags::{SecurityFlags, FeatureFlags};
-pub use profile::{BrowserProfile, ProfileKind};
-pub use launcher::{ChromiumLauncher, LaunchConfig};
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_chromium_flags_aaa() {
+        // Arrange & Act
+        let flags = ChromiumFlags::sovereign_hardened();
+        // Assert
+        assert!(flags.enable_sandboxing);
+        assert!(flags.disable_telemetry);
+        assert!(flags.wayland_ozone_enabled);
+    }
+}
