@@ -1,4 +1,4 @@
-//! chromium model — web browser.
+//! Utility model for chromium (legacy compat).
 
 #[derive(Debug, Clone)]
 pub struct Tab {
@@ -19,8 +19,8 @@ impl Default for Model {
 impl Model {
     pub fn new() -> Self { Self::default() }
 
-    pub fn open(&mut self, title: &str, url: &str) {
-        self.tabs.push(Tab { title: title.into(), url: url.into(), active: true });
+    pub fn add_tab(&mut self, url: &str) {
+        self.tabs.push(Tab { title: String::new(), url: url.into(), active: self.tabs.is_empty() });
     }
 
     pub fn list_tabs(&self) -> &[Tab] { &self.tabs }
@@ -30,9 +30,9 @@ impl Model {
 mod tests {
     use super::*;
     #[test]
-    fn open_tab() {
-        let mut c = Model::new();
-        c.open("Example", "https://example.com");
-        assert_eq!(c.list_tabs().len(), 1);
+    fn legacy_model() {
+        let mut m = Model::new();
+        m.add_tab("https://example.com");
+        assert_eq!(m.tabs.len(), 1);
     }
 }
