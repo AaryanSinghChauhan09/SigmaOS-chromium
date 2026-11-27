@@ -1,10 +1,5 @@
 [component]
-name = "chromium"
-id = "sigmaos-chromium"
-kind = "component"
-license = "GPL-3.0-or-later"
-
-[component.metadata]
-category = "sigmaos"
-branch = "main"
-docs = "github-wiki"
+name = "SigmaOS-chromium"
+version = "0.1.0"
+category = "browser"
+description = "Chromium browser profile and policy management for SigmaOS"

@@ -1,3 +1,2 @@
-*.zst
-pkg/
-src/
+/target
+.env

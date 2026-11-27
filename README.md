@@ -1,8 +1,12 @@
-# SigmaOS Chromium
+# SigmaOS-chromium
 
-This was a micro-fork of Chromium we needed for live theme switching until upstream improved the policy-based refreshes. But that has now been done, and it's no longer necessary to maintain this fork, so the project has been archived.
-## Documentation
+**Chromium browser profile and policy management for SigmaOS**
 
-Wiki documentation is available in the SigmaOS Wiki Staging repository:
+Part of [SigmaOS](https://github.com/AaryanSinghChauhan09/Sigma).
 
-- [SigmaOS Wiki Staging](https://github.com/AaryanSinghChauhan09/sigmaos-wiki-staging#SigmaOS-chromium) - Full Wiki documentation for all SigmaOS components
+## Usage
+```bash
+sigmaos-chromium --help
+```
+## License
+GPL-3.0-or-later
